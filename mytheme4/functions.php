@@ -40,6 +40,8 @@ add_action( 'widgets_init', 'mytheme_widgets' );
 // CSS
 function mytheme_enqueue() {
 
+  //Google Fonts
+	wp_enqueue_style( 'mytheme-googlefonts', 'https://fonts.googleapis.com/css?family=Montserrat:400,800', array(), null );
 
 	//テーマのCSS
 	wp_enqueue_style( 'mytheme-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
