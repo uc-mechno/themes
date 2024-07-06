@@ -173,3 +173,26 @@ a {
 a:hover {
   opacity: 0.8;
 }
+
+/* PC版 */
+@media (1024px <= width) {
+  body {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows:
+      [head] 100px
+      [main aside] auto
+      [foot] 100px;
+    grid-column-gap: 5%;
+    column-gap: 5%;
+  }
+
+  main {
+    grid-column: 2 / span 4;
+    align-self: start;
+  }
+
+  aside {
+    grid-column: 6 / span 2;
+    align-self: start;
+  }
+}
