@@ -6,6 +6,16 @@ Description: オリジナルテーマです
 Version: 1.0
 */
 
+/* 変数 */
+:root {
+  --f1: 2.44em;
+  --f2: 1.95em;
+  --f3: 1.56em;
+  --f4: 1.25em;
+  --f5: 1em;
+  --f6: 0.8em;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -49,6 +59,35 @@ nav ul {
 /* コンテンツ */
 main {
   grid-row: main;
+}
+
+h1 {
+	font-size: var(--f1);
+}
+
+h2 {
+	font-size: var(--f2);
+}
+
+h3 {
+	font-size: var(--f3);
+}
+
+h4 {
+	font-size: var(--f4);
+}
+
+h5 {
+	font-size: var(--f5);
+}
+
+h6 {
+	font-size: var(--f6);
+}
+
+p {
+  font-size: var(--f5);
+  line-height: 2;
 }
 
 /* サイドメニュー */
