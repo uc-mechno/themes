@@ -45,9 +45,9 @@ a:hover {
 /* グリッド */
 body {
 	display: grid;
-	grid-template-columns: 
+	grid-template-columns:
 		10px 1fr 10px;
-	grid-template-rows: 
+	grid-template-rows:
 		[head] 100px
 		[main] auto
 		[aside] auto
@@ -187,11 +187,16 @@ body::after {
 
 
 /* PC版 */
+/**
+ * Description
+ * @param {1024px} min-width
+ * @returns {any}
+ */
 @media (min-width: 1024px) {
 
 body {
 	grid-template-columns: 0.2fr repeat(6,1fr) 0.2fr;
-	grid-template-rows: 
+	grid-template-rows:
 		[head] 100px
 		[main aside] auto
 		[foot] 100px;
@@ -210,5 +215,3 @@ aside {
 }
 
 }
-
-
