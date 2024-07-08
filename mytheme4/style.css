@@ -5,3 +5,194 @@ Author: CATWALK
 Description: オリジナルテーマです
 Version: 1.0
 */
+
+/* 変数 */
+:root {
+  --f1: 2.44em;
+  --f2: 1.95em;
+  --f3: 1.56em;
+  --f4: 1.25em;
+  --f5: 1em;
+  --f6: 0.8em;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-rows:
+    [head] 100px
+    [main] auto
+    [aside] auto
+    [foot] 100px;
+  grid-row-gap: 50px;
+  row-gap: 50px;
+}
+
+body > * {
+  grid-column: 2 / -2;
+}
+
+/* ヘッダー */
+header {
+  grid-row: head;
+  justify-self: center;
+  align-self: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: var(--f3);
+  font-weight: bold;
+}
+
+body::before {
+  content: "";
+  background-color: #eeeeee;
+  height: 2px;
+  grid-column: 1 / -1;
+  grid-row: head;
+  align-self: end;
+  margin-bottom: -20px;
+}
+
+/* ナビゲーションメニュー */
+nav {
+  grid-row: head;
+  justify-self: center;
+  align-self: end;
+}
+
+nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  grid-column-gap: 20px;
+  column-gap: 20px;
+  font-size: var(--f6);
+}
+
+/* コンテンツ */
+main {
+  grid-row: main;
+}
+
+h1 {
+  font-size: var(--f1);
+}
+
+h2 {
+  font-size: var(--f2);
+}
+
+h3 {
+  font-size: var(--f3);
+}
+
+h4 {
+  font-size: var(--f4);
+}
+
+h5 {
+  font-size: var(--f5);
+}
+
+h6 {
+  font-size: var(--f6);
+}
+
+p {
+  font-size: var(--f5);
+  line-height: 2;
+}
+
+/* サイドメニュー */
+aside {
+  grid-row: aside;
+  display: grid;
+  grid-row-gap: 30px;
+  row-gap: 30px;
+}
+
+section {
+  border: 1px solid #dddddd;
+  padding: 15px;
+  box-shadow: 0 3px 5px #dddddd;
+}
+
+section h2 {
+  border-bottom: solid 1px #dddddd;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: var(--f4);
+  font-weight: normal;
+  color: #1b5e92;
+  text-align: center;
+}
+
+section ul {
+  padding: 0;
+  list-style-type: none;
+  font-size: var(--f6);
+  display: grid;
+  grid-row-gap: 15px;
+  row-gap: 15px;
+}
+
+/* フッター */
+footer {
+  grid-row: foot;
+  justify-self: center;
+  align-self: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: var(--f6);
+}
+
+body::after {
+  content: "";
+  background-color: #666666;
+  grid-column: 1 / -1;
+  grid-row: foot;
+  z-index: -1;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #444444;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* PC版 */
+@media (1024px <= width) {
+  body {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows:
+      [head] 100px
+      [main aside] auto
+      [foot] 100px;
+    grid-column-gap: 5%;
+    column-gap: 5%;
+  }
+
+  main {
+    grid-column: 2 / span 4;
+    align-self: start;
+  }
+
+  aside {
+    grid-column: 6 / span 2;
+    align-self: start;
+  }
+}
