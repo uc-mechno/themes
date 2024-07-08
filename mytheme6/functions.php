@@ -4,7 +4,7 @@
 function mytheme_setup() {
 
 	// ブロックベースのウィジェットエディタを無効化
-	remove_theme_support( 'widgets-block-editor' );	
+	remove_theme_support( 'widgets-block-editor' );
 
 	// ページのタイトルを出力
 	add_theme_support( 'title-tag' );
@@ -23,6 +23,12 @@ function mytheme_setup() {
 	// 編集画面用のCSS
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'editor-style.css' );
+
+  	// グーテンベルク由来のCSS（theme.min.css）
+	add_theme_support( 'wp-block-styles' );
+
+	// 埋め込みコンテンツのレスポンシブ化
+	add_theme_support( 'responsive-embeds' );
 
 }
 add_action( 'after_setup_theme', 'mytheme_setup' );
@@ -64,7 +70,7 @@ function mytheme_sri( $html, $handle ) {
 		return str_replace(
 			'/>',
 			'integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"' . ' />',
-			$html 
+			$html
 		);
 	}
 	return $html;

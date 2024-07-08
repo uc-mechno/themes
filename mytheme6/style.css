@@ -45,9 +45,9 @@ a:hover {
 /* グリッド */
 body {
 	display: grid;
-	grid-template-columns: 
+	grid-template-columns:
 		10px 1fr 10px;
-	grid-template-rows: 
+	grid-template-rows:
 		[head] 100px
 		[main] auto
 		[aside] auto
@@ -388,13 +388,58 @@ time {
 	-webkit-appearance: none;
 }
 
+/* 仕上げ */
+.alignleft {
+	float: left;
+	margin: 0 2em 2em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 2em 2em;
+}
+
+.aligncenter {
+	display: block;
+	margin: 2em auto;
+	clear: both;
+}
+
+article {
+	display: flow-root;
+}
+
+article::after { /* 未対応ブラウザ用の設定 */
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter,
+.wp-block-archives.aligncenter,
+.wp-block-tag-cloud.aligncenter,
+.wp-block-latest-comments.aligncenter,
+.wp-block-rss.aligncenter {
+	text-align: center;
+}
+
+article {
+	box-sizing: border-box;
+}
+
+article *,
+article *::before,
+article *::after {
+	box-sizing: inherit;
+}
 
 /* PC版 */
 @media (min-width: 1024px) {
 
 body {
 	grid-template-columns: 0.2fr repeat(6,1fr) 0.2fr;
-	grid-template-rows: 
+	grid-template-rows:
 		[head] 100px
 		[main aside] auto
 		[foot] 100px;
@@ -421,5 +466,3 @@ aside {
 }
 
 }
-
-
